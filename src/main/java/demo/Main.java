@@ -36,7 +36,7 @@ public class Main {
         // 创建reader
         FlatFileItemReader<DeviceCommand> flatFileItemReader = new FlatFileItemReader<>();
         flatFileItemReader.setResource(new FileSystemResource("src/main/resources/batch-data.csv"));
-        flatFileItemReader.setLineMapper(new HelloLineMapper());
+        flatFileItemReader.setLineMapper(new HelloLineMapper());    // 进行分词
 
         // 创建processor
         HelloItemProcessor helloItemProcessor = new HelloItemProcessor();
