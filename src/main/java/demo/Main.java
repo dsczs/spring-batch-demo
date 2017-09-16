@@ -14,6 +14,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import java.io.*;
+
 /**
  * demo.Demo for spring batch
  * Created by wuzhaofeng on 17/7/23.
@@ -22,7 +24,6 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-
         // 加载上下文
         String[] configLocations = {"applicationContext.xml"};
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocations);
@@ -42,7 +43,7 @@ public class Main {
 
         // 创建writer
         FlatFileItemWriter<DeviceCommand> flatFileItemWriter = new FlatFileItemWriter<>();
-        flatFileItemWriter.setResource(new FileSystemResource("src/main/resources/batch-data.csv"));
+        flatFileItemWriter.setResource(new FileSystemResource("src/main/resources/batch-data1.csv"));
         flatFileItemWriter.setLineAggregator(new HelloLineAggregator());
 
 
